@@ -1,0 +1,11 @@
+{
+  "name": "gcal-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "author": "shwld",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^2.0.2"
+  }
+}

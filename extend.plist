@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ElectronTeamID</key>
+	<string>54NG578TDZ</string>
+	<key>CFBundleIdentifier</key>
+	<string>net.shwld.gCalClient</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>gcal</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>gcal</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>
