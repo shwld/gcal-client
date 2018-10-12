@@ -1,7 +1,9 @@
 const electron = require('electron')
-const {app, BrowserWindow, Menu, shell} = require('electron')
+const {app, BrowserWindow, Menu, shell, Tray} = require('electron')
 const path = require('path')
 const url = require('url')
+const format = require('date-fns/format')
+const ja = require('date-fns/locale/ja')
 
 let win
 function createWindow () {
@@ -21,8 +23,19 @@ function createWindow () {
   })
 }
 
+function createTray () {
+  const tray = new Tray(path.join(__dirname, 'icon.png'))
+  tray.setTitle(format(new Date(), 'MMMDo', { locale: ja }))
+
+  tray.on('click', () => {
+    win.isVisible() ? win.hide() : win.show()
+  })
+}
+
+app.dock.hide();
 app.on('ready', () => {
   createWindow();
+  createTray();
   createMenu();
 })
 

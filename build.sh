@@ -1,10 +1,10 @@
 #!/bin/bash
 
-PKG_VERSION=`node -pe 'require("./dist/package.json").version'`
+PKG_VERSION=`node -pe 'require("./src/package.json").version'`
 
 echo "version: ${PKG_VERSION}"
 
-electron-packager ./dist "gCalClient" \
+electron-packager ./src "gCal" \
   --overwrite \
   --platform=darwin \
   --arch=x64 \
@@ -19,4 +19,4 @@ electron-packager ./dist "gCalClient" \
   --protocol-namegcal=
 #   --osx-sign=true
 
-zip -r -y ./"gCalClient-"${PKG_VERSION}-darwin-x64.zip ./"gCalClient"-darwin-x64/"gCalClient".app
+zip -r -y ./"gCal-"${PKG_VERSION}-darwin-x64.zip ./"gCal"-darwin-x64/"gCal".app
