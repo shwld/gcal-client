@@ -25,10 +25,12 @@ function createWindow () {
 
 function createTray () {
   const tray = new Tray(path.join(__dirname, 'icon.png'))
-  tray.setTitle(format(new Date(), 'MMMDo', { locale: ja }))
+  const updateDate = () => tray.setTitle(format(new Date(), 'MMMDo', { locale: ja }))
+  updateDate()
+  setInterval(updateDate, 900000)
 
   tray.on('click', () => {
-    win.isVisible() ? win.hide() : win.show()
+    win.isVisible() && win.isFocused() ? win.hide() : win.show()
   })
 }
 
